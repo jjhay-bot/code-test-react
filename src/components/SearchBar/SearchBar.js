@@ -18,16 +18,26 @@ const SearchBar = (props) => {
         return product.includes(searchValue)
     })
 
-    return (
-        <div>
-            <i>{searchValue}</i>
-            <br />
-            <input type="text" value={searchValue} onChange={handleInputChange} />
-            {displayClear && <button onClick={handleClearClick}>clear</button>}                       
+    const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
 
-            <ul>
+    return (
+        <div className={'center'}>
+            <div className={'search_field'}>
+                <input type="text" value={capitalize(searchValue)} onChange={handleInputChange} placeholder="search..." />
+                {displayClear && <button onClick={handleClearClick}>clear</button>}  
+            </div>
+                     
+
+            <ul className={'center'}>
                 {filteredProducts.map((product) => {
-                    return <li  key={product}>{product}</li>
+                    return (
+                        <div className={'card'}>
+                            <li  key={product}>{product}</li>
+                        </div>
+                    )
                 })}
             </ul>
             

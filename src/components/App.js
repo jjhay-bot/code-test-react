@@ -13,7 +13,8 @@ const App = () => {
             .then((res) => res.json())
             .then((producstsArray) => {                       // mission_name, upcoming, launch_success, launch_year, article_link, video_link
                 const newProductsState = producstsArray.map((product) => {
-                    return product.mission_name                             
+                    return ( product.mission_name )        
+
                 })
                 setProductsState(newProductsState)
             })
@@ -22,7 +23,7 @@ const App = () => {
     const hasProducts = productsState.length > 0
 
     return (
-        <div>
+        <div id='pagelimit'>
             {/* <CountButton incrementBy={1} />
             <CountButton incrementBy={5} buttonColor={"blue"}/> */}
 

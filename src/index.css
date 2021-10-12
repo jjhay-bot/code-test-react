@@ -1,0 +1,10 @@
+body {
+    /* background-color: rgba(173, 158, 158, 0.397); */
+    display: grid;
+    place-items: center;
+}
+
+#pagelimit {
+    width: 700px;
+    background-color: rgba(172, 156, 151, 0.15);
+}

@@ -4,7 +4,6 @@ import "./TestUse.css"
 const TestUse = (props) => {
     const [currentCount, setCurrentCount] = useState(0)         //userState(defaultvalue)
 
-    
     useEffect(() => {      
         console.log(currentCount);                             // useEffect(() => {}, [])
         if (currentCount === 10) {
