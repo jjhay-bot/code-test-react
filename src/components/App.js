@@ -12,10 +12,17 @@ const App = () => {
             {/* <CountButton incrementBy={1} />
             <CountButton incrementBy={5} buttonColor={"blue"}/> */}
 
-            <Spinner />
-            <SeachBar />
+            {/* <Spinner /> */}
 
+            <SeachBar products={[ 
+                'product 1',
+                'pro2duct 2',
+                'prod3uct 3',
+                'produ4ct 4',
+                ]} 
+            />
 
+            
 
         </div>
     )

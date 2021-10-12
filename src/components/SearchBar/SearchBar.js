@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./SearchBar.css"
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     const [searchValue, setSearchValue] = useState("")            // default, updated
 
     const handleInputChange = (e) => {
@@ -14,14 +14,23 @@ const SearchBar = () => {
 
     const displayClear = searchValue.length > 0
 
+    const filteredProducts = props.products.filter((product) => {
+        return product.includes(searchValue)
+    })
+
     return (
         <div>
             <i>{searchValue}</i>
             <br />
-            <input id="coun" type="text" value={searchValue} onChange={handleInputChange} />
-            {displayClear && <button onClick={handleClearClick}>clear</button>}
-            
+            <input type="text" value={searchValue} onChange={handleInputChange} />
+            {displayClear && <button onClick={handleClearClick}>clear</button>}                       
 
+            <ul>
+                {filteredProducts.map((product) => {
+                    return <li  key={product}>{product}</li>
+                })}
+            </ul>
+            
         </div>
     )
    
