@@ -6,13 +6,13 @@ const TestUse = (props) => {
 
     
     useEffect(() => {      
-        console.log(currentCount);                                     // useEffect(() => {}, [])
+        console.log(currentCount);                             // useEffect(() => {}, [])
         if (currentCount === 10) {
             // somelogic here ....
             alert('ops 10')
             setCurrentCount(0)
         }
-    }, [currentCount])              // can add multiple states
+    }, [currentCount])                                         // can add multiple states, if [] has no value execute once
    
 
     const handleClick = () => {

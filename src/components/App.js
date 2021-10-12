@@ -1,29 +1,34 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 import CountButton from './CountButton/CountButton'
 import Spinner from './Spinner/Spinner'
 import SeachBar from './SearchBar/SearchBar'
 import TestUse from './TestUse/TestUse'
 
 const App = () => {
-    const myItem = 'jhay'
+    const [productsState, setProductsState] = useState([])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setProductsState([ 
+                'phone',
+                'payphone',
+                'telephone',
+                'cellphone',
+            ])
+        }, 2000)
+    }, [])
+
+    const hasProducts = productsState.length > 0
 
     return (
         <div>
             {/* <CountButton incrementBy={1} />
             <CountButton incrementBy={5} buttonColor={"blue"}/> */}
 
-            {/* <Spinner /> */}
+            {/* <TestUse incrementBy={1} /> */}
 
-            {/* <SeachBar products={[ 
-                'product 1',
-                'pro2duct 2',
-                'prod3uct 3',
-                'produ4ct 4',
-                ]} 
-            /> */}
+            {hasProducts ? <SeachBar products={productsState} /> : <Spinner /> }
 
-            <TestUse incrementBy={1} />
-    
 
         </div>
     )
