@@ -10,19 +10,13 @@ const App = () => {
     useEffect(() => {
 
         fetch('https://api.spacexdata.com/v3/launches')
-            .then((res)=>res.json())
-            .then((json) => {
-                console.log(json)
+            .then((res) => res.json())
+            .then((producstsArray) => {                       // mission_name, upcoming, launch_success, launch_year, article_link, video_link
+                const newProductsState = producstsArray.map((product) => {
+                    return product.mission_name                             
+                })
+                setProductsState(newProductsState)
             })
-
-        setTimeout(() => {
-            setProductsState([ 
-                'phone',
-                'payphone',
-                'telephone',
-                'cellphone',
-            ])
-        }, 2000)
     }, [])
 
     const hasProducts = productsState.length > 0
