@@ -19,7 +19,8 @@ li {
     justify-content: center;
     display: flex;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    box-shadow: 2px 2px #6b67764d;
 }
 
 a {
